@@ -1,0 +1,54 @@
+From 8475f15207d30b8478c37acb929249eb54a5fa28 Mon Sep 17 00:00:00 2001
+From: TSTS09 <sekaletchio@gmail.com>
+Date: Mon, 7 Aug 2023 18:43:30 +0100
+Subject: [PATCH] Latest code update
+
+---
+ __pycache__/client3.cpython-310.pyc | Bin 1169 -> 1213 bytes
+ client3.py                          |   6 ++++++
+ 2 files changed, 6 insertions(+)
+
+diff --git a/__pycache__/client3.cpython-310.pyc b/__pycache__/client3.cpython-310.pyc
+index 82ae6c620282a2308686199b1a5836e8100afb74..b3f3f6b70ca17750e76a3b56b0f8c478db93eb33 100644
+GIT binary patch
+delta 192
+zcmbQpxtEhKpO=@50SGvBFQzQun#d=^_->-M6@PImXDU}JYcpdrqYFc9(8Lmrm`sK!
+zp;SR2PbNw@l`U1cnK6bXN+e1&N-Rn|RXkNFRm6q?PD`Y4ri!GBri!JCr?H4JG&3?X
+z6k4ZBq;RFOr;4X=OM+BNN-{JvLF6`Gn#ydT19FB42O|d~3o{Ed2QvpB2af=g0wWU>
+Y3nL3qQ~-!M7{wT+m}D4PKC&<Y0MLsg00000
+
+delta 127
+zcmdnXIgyhupO=@50SMl!Urc$+Igw9>@x(-JEB=I3&Qz{c)@H_LMi+)y`-vqQ5~+ef
+zmPC|rDqE^>Gh+-(lt`3llvtGb!~?R7mJ{zuZ5CpzX4X;zn#Cc)!N|eL!py?V!OX$O
+Z!70F`z{teJ0u&PfVlhS;CYCQOOaO|77={1<
+
+diff --git a/client3.py b/client3.py
+index 47d3c56..48646b2 100644
+--- a/client3.py
++++ b/client3.py
+@@ -49,6 +49,9 @@ def getRatio(price_a, price_b):
+     if (price_b ==0):
+         return
+     return price_a/price_b
++    if (price_b ==0):
++        return
++    return price_a/price_b
+ 
+ 
+ # Main
+@@ -59,9 +62,12 @@ if __name__ == "__main__":
+ 
+         """ ----------- Update to get the ratio --------------- """
+         prices = {}
++        prices = {}
+         for quote in quotes:
+             stock, bid_price, ask_price, price = getDataPoint(quote)
+             prices[stock]=price
++            prices[stock]=price
+             print("Quoted %s at (bid:%s, ask:%s, price:%s)" % (stock, bid_price, ask_price, price))
+ 
+         print("Ratio %s" % getRatio(price["ABC"], price[DEF]))
++        print("Ratio %s" % getRatio(price["ABC"], price[DEF]))
+-- 
+2.34.1
+
